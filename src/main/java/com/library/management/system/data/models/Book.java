@@ -13,6 +13,8 @@ public class Book {
     private String PublisherName;
     private String CategoryName;
     private String ISBN;
+    private String status;
+
 
 
 }
