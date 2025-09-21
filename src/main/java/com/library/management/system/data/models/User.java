@@ -9,6 +9,8 @@ public class User {
     @Id
     private String UserId;
     private String UserName;
+    private String Email;
     private String Password;
-    private String Role;
+
+    private Role role;
 }
