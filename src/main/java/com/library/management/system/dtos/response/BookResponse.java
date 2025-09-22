@@ -9,4 +9,5 @@ public class BookResponse {
     private String categoryName;
     private String ISBN;
     private String bookId;
+    private String status;
 }
