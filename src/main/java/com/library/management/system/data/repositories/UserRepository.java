@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends MongoRepository <User,String>{
-    Optional<User> finfbyEmail(String email);
+    Optional<User> findByEmail(String email);
     boolean existsByEmail(String email); // if email already registered
 }
