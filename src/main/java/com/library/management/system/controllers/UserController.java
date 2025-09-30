@@ -23,6 +23,7 @@ public class UserController {
 
     @PostMapping("/register")
     public UserResponse registerUser(UserRequest userRequest){
+
         return userService.registerUser(userRequest);
     }
 
