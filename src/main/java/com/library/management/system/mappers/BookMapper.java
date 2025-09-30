@@ -16,6 +16,7 @@ public class BookMapper {
         book.setISBN(bookRequest.getISBN());
         book.setBookId(bookRequest.getBookId());
         book.setStatus("Available");
+
         return book;
 
     }
