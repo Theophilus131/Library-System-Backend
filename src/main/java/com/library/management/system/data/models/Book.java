@@ -7,11 +7,11 @@ import org.springframework.data.annotation.Id;
 public class Book {
     @Id
 
-    private String BookId;
-    private String BookName;
-    private String AuthorName;
-    private String PublisherName;
-    private String CategoryName;
+    private String bookId;
+    private String bookName;
+    private String authorName;
+    private String publisherName;
+    private String categoryName;
     private String ISBN;
     private String status;
 
