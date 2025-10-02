@@ -1,5 +1,6 @@
 package com.library.management.system.mappers;
 
+import com.library.management.system.data.models.Role;
 import com.library.management.system.data.models.User;
 import com.library.management.system.dtos.request.UserRequest;
 import com.library.management.system.dtos.response.UserResponse;
@@ -10,9 +11,9 @@ public class UserMapper {
         User user = new User();
 
         user.setUserName(userRequest.getUserName());
-        user.setEmail(user.getEmail());
-        user.setPassword(user.getPassword());
-        user.setRole(user.getRole());
+        user.setEmail(userRequest.getEmail());
+        user.setPassword(userRequest.getPassword());
+        user.setRole(Role.valueOf(userRequest.getRole()));
         return user;
     }
 
