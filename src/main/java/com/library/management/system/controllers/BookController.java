@@ -27,7 +27,7 @@ public class BookController {
 
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public BookResponse updateBook(@RequestBody BookRequest bookRequest){
         return bookService.updateBook(bookRequest);
     }
