@@ -4,10 +4,12 @@ import com.library.management.system.data.models.Book;
 import com.library.management.system.data.repositories.BookRepository;
 import com.library.management.system.dtos.request.BookRequest;
 import com.library.management.system.dtos.response.BookResponse;
+import com.library.management.system.exceptions.BookNotFoundException;
 import com.library.management.system.mappers.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,10 +52,25 @@ public class BookServiceImpl implements BookService{
     }
 
     @Override
-    public List<BookResponse> getAllBooks(){
-       return null;
+    public List<BookResponse> getAllBooks() {
 
+        List<Book> bookList = bookRepository.findAll();
+
+        if (bookList.isEmpty()) {
+            throw new BookNotFoundException("No books found");
+        }
+
+
+        List<BookResponse> responseList = new ArrayList<>();
+
+        for (Book book : bookList) {
+            BookResponse response = BookMapper.toResponse(book);
+            responseList.add(response);
+        }
+
+        return responseList;
     }
+
 
     @Override
     public void deleteBookById(String id) {
